@@ -10,6 +10,9 @@ function AuthValidator() {
             .withMessage('Invalid email address '),
 
         body('password')
+            .not() 
+            .isEmpty() 
+            .withMessage('Password can not be empty ')
             .isLength({min:8})
             .withMessage('Password must be at least 8 chars long ')
             .matches(/(?=.*[A-Z])(?=.*[a-z])(?=.*[!@#$%^&*])(?=.*\d)/)

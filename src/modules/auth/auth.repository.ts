@@ -34,7 +34,7 @@ class AuthRepository {
     async register(body:Auth){
         try{
             const userFound = await this.retirieveByEmail(body)
-            if(!userFound) return 
+            if(userFound) return 
 
             return await Auth.create({
                 email: body.email, 
