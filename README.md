@@ -25,8 +25,24 @@
    <li>Priority</li>
    <li>Status</li>
  </ul>
+<br> 
 
-  
+## Installation
+<p>First clone or download this project</p>
+
+``` bash
+$ git clone https://github.com/alireezahmadi/todo-typescript-express.git
+```
+<p>Then Running the app</p>
+
+ ``` bash 
+   # development
+   $ npm run dev
+
+  # production mode
+   $ npm run start
+ ```
+
   
  
   
