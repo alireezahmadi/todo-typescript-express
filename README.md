@@ -33,7 +33,12 @@
 ``` bash
 $ git clone https://github.com/alireezahmadi/todo-typescript-express.git
 ```
-<p>Then Running the app</p>
+Then Install the required dependencies
+
+```bash
+  $ npm install
+```
+Finally Running the app 
 
  ``` bash 
    # development
