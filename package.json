@@ -23,8 +23,7 @@
     "@types/typescript": "^2.0.0",
     "nodemon": "^3.0.1",
     "ts-node": "^10.9.1",
-    "tsc-watch": "^6.0.4",
-    "typescript": "^5.2.2"
+    "tsc-watch": "^6.0.4"
   },
   "dependencies": {
     "bcrypt": "^5.1.1",
@@ -39,6 +38,7 @@
     "pg": "^8.11.3",
     "pg-hstore": "^2.3.4",
     "sequelize": "^6.33.0",
-    "sequelize-typescript": "^2.1.5"
+    "sequelize-typescript": "^2.1.5", 
+    "typescript": "^5.2.2"
   }
 }

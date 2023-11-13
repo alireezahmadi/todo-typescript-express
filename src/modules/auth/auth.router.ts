@@ -10,6 +10,7 @@ class AuthRoutes{
     }
 
     initializeRoutes(){
+    
         this.router.post('/login' , AuthValidator(), this.controller.login)
         this.router.post('/register',AuthValidator(), this.controller.register)
     }

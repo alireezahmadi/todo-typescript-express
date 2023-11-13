@@ -1,0 +1,60 @@
+version: '3.8' 
+
+volumes:
+  psql_volume: 
+    name: psql_v 
+  caddy_data_volume:
+    name: caddy_data_v
+  caddy_config_volume:
+    name: caddy_config_v
+
+services:
+    psql: 
+      image: postgres:alpine 
+      container_name: psql
+      restart: unless-stopped 
+      env_file: ./.env
+      environment:
+        - POSTGRES_USER=$USERNAME_PSQL
+        - POSTGRES_PASSWORD=$PASSPORT_PSQL
+        - POSTGRES_DB=$DB_PSQL
+       
+      volumes:
+        - psql_volume:/var/lib/postgres
+      ports: 
+        - 5432:5432  
+
+    app:
+      depends_on: 
+        - psql 
+      build: .
+      container_name: app 
+      restart: unless-stopped 
+      env_file: ./.env 
+      environment: 
+          - PORT=$PORT
+          - USERNAME_PSQL=$USERNAME_PSQL
+          - PASSPORT_PSQL=$PASSPORT_PSQL
+          - PORT_PSQL=$PORT_PSQL
+          - HOST_PSQL=psql
+          - DB_PSQL=$DB_PSQL
+          - JWT_SECRECT=$JWT_SECRECT
+      ports: 
+        - $PORT:$PORT
+    
+    caddy: 
+      image: caddy:alpine
+      container_name: caddy-service 
+      restart: unless-stopped 
+      ports:
+        - 80:80 
+        - 443:443 
+      volumes:
+        - $PWD/Caddyfile:/etc/caddy/Caddyfile
+        - $PWD/site:/srv
+        - caddy_data_volume:/data
+        - caddy_config_volume:/config
+
+    
+
+

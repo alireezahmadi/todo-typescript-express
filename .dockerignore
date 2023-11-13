@@ -1,0 +1,11 @@
+.dockerignore
+Dockerfile
+docker-compose.yml
+
+.git
+.gitignore
+README.md
+node_modules
+.env.Sample
+dist
+todo.postman_collection.json
