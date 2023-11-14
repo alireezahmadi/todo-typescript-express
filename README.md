@@ -33,21 +33,22 @@
 ``` bash
 $ git clone https://github.com/alireezahmadi/todo-typescript-express.git
 ```
-Then Install the required dependencies
+<p>You need to create .env file in the project root file with default values.</p> 
 
 ```bash
-  $ npm install
+PORT=3000 
+USERNAME_PSQL=postgres
+PASSPORT_PSQL=postgres
+PORT_PSQL= 5432
+DB_PSQL= todo
+JWT_SECRECT= secret
 ```
-Finally Running the app 
 
- ``` bash 
-   # development
-   $ npm run dev
+<p>Now run express and postgresql with **docker-compose**.</p> 
 
-  # production mode
-   $ npm run start
- ```
-
+```sh
+$ docker-compose up -d
+```
   
  
   
